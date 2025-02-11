@@ -4,15 +4,12 @@ export class ArcadiaHeader extends HTMLElement {
   }
 
   underlineActiveIndex(link) {
-    const currentPath = window.location.pathname.slice("1").split("/");
+    const currentPath = window.location.pathname.slice("1");
 
     const hrefArray = link.href.split("/");
     const thisPath = hrefArray[hrefArray.length - 1];
 
-    console.log(`Current Path: ${currentPath} || This Path: ${thisPath}`);
-    console.log(currentPath[currentPath.length - 1] === thisPath);
-
-    if (currentPath[currentPath.length - 1] === thisPath) {
+    if (currentPath === thisPath || currentPath === "arcadia_project/" + thisPath) {
       link.classList.add("active");
     }
   }
@@ -41,7 +38,6 @@ export class ArcadiaHeader extends HTMLElement {
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-logo");
           link.setAttribute("href", "./index.html");
-          console.log(link);
           link.appendChild(logo);
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
