@@ -4,14 +4,15 @@ export class ArcadiaHeader extends HTMLElement {
   }
 
   underlineActiveIndex(link) {
-    const currentPath = window.location.pathname.slice("1");
+    const currentPath = window.location.pathname.slice("1").split("/");
 
     const hrefArray = link.href.split("/");
     const thisPath = hrefArray[hrefArray.length - 1];
 
     console.log(`Current Path: ${currentPath} || This Path: ${thisPath}`);
+    console.log(currentPath[currentPath.length - 1] === thisPath);
 
-    if (currentPath === thisPath) {
+    if (currentPath[currentPath.length - 1] === thisPath) {
       link.classList.add("active");
     }
   }
@@ -52,7 +53,7 @@ export class ArcadiaHeader extends HTMLElement {
           // Heroes Page
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-link");
-          link.setAttribute("href", "./heroes.html");
+          link.setAttribute("href", "./characters.html");
           link.innerText = "CHARACTERS";
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
