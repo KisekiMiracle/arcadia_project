@@ -37,7 +37,10 @@ export class ArcadiaHeader extends HTMLElement {
           // Home Page
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-logo");
-          link.setAttribute("href", "./");
+          // Uncomment on Development
+          link.setAttribute("href", "./index.html");
+          // Uncomment on Production
+          //link.setAttribute("href", "./");
           link.appendChild(logo);
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
@@ -49,7 +52,10 @@ export class ArcadiaHeader extends HTMLElement {
           // Heroes Page
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-link");
-          link.setAttribute("href", "./characters");
+          // Uncomment on Development
+          link.setAttribute("href", "./characters.html");
+          // Uncomment on Production
+          //link.setAttribute("href", "./characters");
           link.innerText = "CHARACTERS";
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
