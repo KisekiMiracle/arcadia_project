@@ -27,7 +27,7 @@ export class ArcadiaHeader extends HTMLElement {
 
     const logo = document.createElement("img");
     logo.setAttribute("class", "c-header-logo");
-    logo.setAttribute("src", "/static/img/placeholder_logo.png");
+    logo.setAttribute("src", "./static/img/placeholder_logo.png");
     logo.setAttribute("alt", "");
 
     // Append Li to Lu
@@ -43,7 +43,7 @@ export class ArcadiaHeader extends HTMLElement {
           // Heroes
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-link");
-          link.setAttribute("href", "/pages/heroes.html");
+          link.setAttribute("href", "./pages/heroes.html");
           link.innerText = "Heroes";
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
@@ -68,7 +68,7 @@ export class ArcadiaHeader extends HTMLElement {
     // Apply scss styles
     const styles = document.createElement("link");
     styles.setAttribute("rel", "stylesheet");
-    styles.setAttribute("href", "/src/scss/dist/css/header.min.css");
+    styles.setAttribute("href", "./src/scss/dist/css/header.min.css");
 
     // Attach elements to shadow dom
     shadow.appendChild(styles);
