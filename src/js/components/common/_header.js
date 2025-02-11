@@ -35,16 +35,25 @@ export class ArcadiaHeader extends HTMLElement {
       const listItem = document.createElement("li");
 
       switch (i) {
-        case 0: //logo
-          listItem.appendChild(logo);
+        case 0: {
+          // Home Page
+          const link = document.createElement("a");
+          link.setAttribute("class", "c-header-logo");
+          link.setAttribute("href", "./index.html");
+          console.log(link);
+          link.appendChild(logo);
+          listItem.appendChild(link);
           unorderedList.appendChild(listItem);
+
+          this.underlineActiveIndex(link);
           break;
+        }
         case 1: {
-          // Heroes
+          // Heroes Page
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-link");
-          link.setAttribute("href", "/pages/heroes.html");
-          link.innerText = "Heroes";
+          link.setAttribute("href", "./heroes.html");
+          link.innerText = "CHARACTERS";
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
 
@@ -52,10 +61,10 @@ export class ArcadiaHeader extends HTMLElement {
           break;
         }
         case 2: {
-          // DevLog
+          // DevLog Pag
           const link = document.createElement("a");
           link.setAttribute("class", "c-header-link");
-          link.innerText = "Dev Log";
+          link.innerText = "DEVLOG";
           listItem.appendChild(link);
           unorderedList.appendChild(listItem);
           break;
@@ -68,7 +77,7 @@ export class ArcadiaHeader extends HTMLElement {
     // Apply scss styles
     const styles = document.createElement("link");
     styles.setAttribute("rel", "stylesheet");
-    styles.setAttribute("href", "/src/scss/dist/css/header.min.css");
+    styles.setAttribute("href", "./src/scss/dist/css/header.min.css");
 
     // Attach elements to shadow dom
     shadow.appendChild(styles);
