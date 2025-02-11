@@ -27,7 +27,7 @@ export class ArcadiaHeader extends HTMLElement {
 
     const logo = document.createElement("img");
     logo.setAttribute("class", "c-header-logo");
-    logo.setAttribute("src", "../static/img/placeholder_logo.png");
+    logo.setAttribute("src", "static/img/placeholder_logo.png");
     logo.setAttribute("alt", "");
 
     // Append Li to Lu
