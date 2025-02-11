@@ -1,0 +1,23 @@
+.c-header {
+  display: flex;
+  background-color: var(--clr-black);
+  padding: 12px 20px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: unset;
+    list-style: none;
+    align-items: center;
+  }
+
+  &-link {
+    color: white;
+    text-decoration: none;
+
+    .active {
+      border-bottom: 1px solid red;
+    }
+  }
+}
